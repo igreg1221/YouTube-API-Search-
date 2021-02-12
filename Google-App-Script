@@ -1,7 +1,10 @@
 function searchByKeyword() {
-  var results = YouTube.Search.list('id,snippet', {q: 'allintitle:"brachial plexus block"', maxResults: 50, publishedAfter: '2010-01-01T00:00:00Z', publishedBefore : '2020-01-01T00:00:00Z', type : 'video'});
+  var results = YouTube.Search.list('id,snippet', {q: 'allintitle:"brachial plexus"+"block"', maxResults: 50, publishedAfter: '2010-01-01T00:00:00Z', publishedBefore : '2020-01-01T00:00:00Z', type : 'video'});
   for(var i in results.items) {
     var item = results.items[i];
     Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
   }
 }
+
+## other search term in 'allintitle' ; "interscalene"+"block"; "supraclavicular"+"block"; "infraclavicular"+"block"; "axillary"+"block"
+## maxresult is 50, so adjust date of pulishedAfter and publishedBefore to obtain data without omitted values.
